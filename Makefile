@@ -4,7 +4,7 @@ RELEASE=yes
 EXE = mesmer
 
 F77 = gfortran
-CC  = gcc
+CC  = gcc -D_GNU_SOURCE
 
 # tune for your processor, if you want
 ifdef RELEASE
@@ -268,7 +268,7 @@ $(CLLDIR)/lib/libcollier.a:
 	@echo "Building Collier"
 	@echo " "
 	mkdir -p $(CLLDIR)/build/
-	cd $(CLLDIR)/build/ && cmake .. -DCMAKE_INSTALL_PREFIX=.. -Dstatic=ON && make && make install
+	cd $(CLLDIR)/build/ && cmake .. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_INSTALL_PREFIX=.. -Dstatic=ON && make && make install
 
 handyg: $(HANDYGDIR)/lib/libhandyg.a
 $(HANDYGDIR)/lib/libhandyg.a:

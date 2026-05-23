@@ -1,0 +1,178 @@
+                                                            
+         *******************************************        
+         *              C O L L I E R              *        
+         *                                         *        
+         *        Complex One-Loop Library         *        
+         *      In Extended Regularizations        *        
+         *                                         *        
+         *    by A.Denner, S.Dittmaier, L.Hofer    *        
+         *                                         *        
+         *              version 1.2.8              *        
+         *                                         *        
+         *******************************************        
+                                                            
+                                                           
+ ***********************************************************
+                                                            
+        file containing the info output of COLLIER          
+                created  18/05/2026  20:52
+                                                            
+ ***********************************************************
+                                                            
+                                                           
+ ***********************************************************
+   Default initialization of COLLIER:                     
+     COLLIER mode: mode_cll =                    1
+       -> use COLI implementation
+ -----------------------------------------------------------
+     internal parameters:                                   
+     maximal degree:     Nmax         =          5
+     UV scale:           muUV2        =  1.0000000000E+00
+     IR scale:           muIR2        =  1.0000000000E+00
+     UV pole:            deltaUV      =  0.0000000000E+00
+     single IR pole:     deltaIR1     =  0.0000000000E+00
+     double IR pole:     deltaIR2     =  0.0000000000E+00
+     target precision:   reqacc_cll   =  1.0000000000E-08
+     critical precision: critacc_cll  =  1.0000000000E-01
+     check precision:    checkacc_cll =  1.0000000000E-02
+     est. CPU precision: dprec_cll    =  4.4408920985E-16
+     maximal rank of Bs: ritmaxB      =         20
+     maximal rank of Cs: ritmaxC      =         18
+     maximal rank of Ds: ritmaxD      =         16
+     stop forced for ErrorStop_cll   <=         -8
+ -----------------------------------------------------------
+     list of infinitesimal masses cleared
+     IR rational terms switched on
+     UV terms for tensors switched on
+     direct tensor reduction for   N >=          6
+ -----------------------------------------------------------
+     cache system switched on
+     initialized caches: ncache_max   =          1
+       cache no. 1: only internal calls cached
+                                                            
+ ***********************************************************
+                                                            
+
+
+
+ ***********************************************************
+ Info-output NO.                    1
+ in routine: SetMode_cll
+ mode_cll set to
+  1 --> use COLI implementation
+
+
+
+ ***********************************************************
+ Info-output NO.                    2
+ in routine: InitCacheSystem_cll
+ cache system initialized
+ COLLIER-Cache:  5 caches initialized at level  5
+
+
+
+ ***********************************************************
+ Info-output NO.                    3
+ in routine: SetDeltaUV_cll
+ UV pole set to
+    deltaUV = 0.000000000000000000D+00
+
+
+
+ ***********************************************************
+ Info-output NO.                    4
+ in routine: SetMuUV2_cll
+ UV scale set to
+    muUV2 = 0.100000000000000000D+01
+
+
+
+ ***********************************************************
+ Info-output NO.                    5
+ in routine: SetMuIR2_cll
+ IR scale set to
+    muIR2 = 0.100000000000000010D-19
+
+
+
+ ***********************************************************
+ Info-output NO.                    6
+ in routine: SwitchOffCacheSystem_cll
+ cache system switched off
+
+
+
+ ***********************************************************
+ Info-output NO.                    7
+ in routine: SwitchOnCacheSystem_cll
+ cache system switched on
+
+
+
+ ***********************************************************
+ Info-output NO.                    8
+ in routine: SwitchOffCacheSystem_cll
+ cache system switched off
+
+
+
+ ***********************************************************
+ Info-output NO.                    9
+ in routine: SwitchOnCacheSystem_cll
+ cache system switched on
+
+
+
+ ***********************************************************
+ Info-output NO.                   10
+ in routine: SwitchOffCacheSystem_cll
+ cache system switched off
+
+
+
+ ***********************************************************
+ Info-output NO.                   11
+ in routine: SwitchOnCacheSystem_cll
+ cache system switched on
+
+
+
+ ***********************************************************
+ Info-output NO.                   12
+ in routine: SwitchOffCacheSystem_cll
+ cache system switched off
+
+
+
+ ***********************************************************
+ Info-output NO.                   13
+ in routine: SwitchOnCacheSystem_cll
+ cache system switched on
+
+
+
+ ***********************************************************
+ Info-output NO.                   14
+ in routine: SwitchOffCacheSystem_cll
+ cache system switched off
+
+
+
+ ***********************************************************
+ Info-output NO.                   15
+ in routine: SwitchOnCacheSystem_cll
+ cache system switched on
+
+
+
+ ***********************************************************
+ Info-output NO.                   16
+ in routine: SwitchOffCacheSystem_cll
+ cache system switched off
+
+
+
+ ***********************************************************
+ Info-output NO.                   17
+ in routine: SwitchOnCacheSystem_cll
+ cache system switched on

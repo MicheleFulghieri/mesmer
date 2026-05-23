@@ -1,0 +1,905 @@
+  *************************************************************
+  ********                                             ********
+  ******               Welcome to [1mMESMER[0m                 ******
+  ****              ~~~~~~~~~~~~~~~~~~~~~~                 ****
+  **       A fully exclusive Monte Carlo event generator     **
+  ****          for [1mM[0muon [1mE[0mlectron [1mS[0mcattering  with         ****
+  ******        [1mM[0multiple [1mE[0mlectromagnetic [1mR[0madiation       ******
+  ********                                             ********
+  *************************************************************
+    Questo è quel pezzo / di calamita:
+    pietra [1mmesmerica[0m, / ch'ebbe l'origine
+    nell'Alemagna, / Che poi sì celebre / là in Francia fu.
+           Mozart/Da Ponte, [3mCosì Fan Tutte[0m, Act II, Scene XVI
+  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 10000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 0.0000000001
+   [ wnorm     ] normalization cross section = -1.
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 10000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 0.0000000001
+   [ wnorm     ] normalization cross section = -1.
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 10000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 0.0000000001
+   [ wnorm     ] normalization cross section = -1.
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 0.0000000001
+   [ wnorm     ] normalization cross section = -1.
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 0.0000000001
+   [ wnorm     ] normalization cross section = -1.
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 0.0000000001
+   [ wnorm     ] normalization cross section = -1.
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 0.0000000001
+   [ wnorm     ] normalization cross section = -1.
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 0.0000000001
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (3.5 mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (5. mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m  
+ [1mPrincipal parameters:[0m
+   [ type "run" to start generation, "help" for help or "quit" to abort ]
+   [ Qmu       ] Incoming muon charge = 1 (in e+ charge units)
+   [ Ebeam     ] Muon beam energy = 150. GeV
+   [ extmubeam ] Feed generic muon beam externally (beam profile): no
+   [ Eemin     ] Minimum electron LAB energy = 1. GeV
+   [ Eemax     ] Maximum electron LAB energy = 150. GeV
+   [ themin    ] Minimum electron LAB angle = 0. mrad
+   [ themax    ] Maximum electron LAB angle = 100. mrad
+   [ thmumin   ] Minimum muon LAB angle = 0. mrad
+   [ thmumax   ] Maximum muon LAB angle = 100. mrad
+   [ acoplcut  ] Apply acoplanarity cut (and value) = no (5. mrad)
+   [ elastcut  ] Apply "elasticity" cut (and value) = no (0.2 mrad)
+   [ Ethr      ] 'Detectability' energy threshold for extra leptons = 0.2 GeV
+   [ ththr     ] Maximum 'detectability' LAB angle for extra leptons = 100. mrad
+   [ ord       ] Simulation at "alpha" order
+   [ arun      ] alpha running is on
+   [ hadoff    ] Hadronic VP is off: no
+   [ nev       ] n. of events to generate: 1000000.
+   [ store     ] events storage: no yes
+   [ storemode ] mode to store: 0
+   [ path      ] files saved in test-run/
+   [ seed      ] seed for pseudo-RNG = 42
+  
+ [1mInternal tweaks:[0m
+   [ mode      ] requested evts. are weighted
+   [ radchs    ] "radiative" charges: muon ~> 1 electron ~> 1
+   [ eps       ] soft photon cutoff in sqrt(s)/2 units = 0.00002
+   [ phmass    ] photon mass = 0.0000000001 GeV
+   [ nphot     ] max. number of photons mode is -1
+   [ nwrite    ] file(s) dumped every 500000 events
+   [ nwarmup   ] events for maximum searching = 0
+   [ ndistr    ] number of distr. at different orders: 1
+   [ sdmax     ] starting "sdifmax" 13000.
+   [ wnorm     ] normalization cross section = 1337.2246738599999389
+   [ sync      ] random numbers sequence syncronization: 0 [0/1]
+  
+ [1mInsert "parameter value" or "run" or "quit": [0m                   
+ Using Fred Jegerlehner's HADR5x19 routine for hadronic \Delta\alpha.
+  
+ WARNING:
+ The directory test-run/ already exists.
+ The files inside it are going to be overwritten...
+  
+ No need of warming-up
+ Running in standalone mode
+                   
+ Initializing MESMER 1.1.6...
+                   
+ ******************************
+ Writing also 34 distributions with 100 bins within appropriate ranges.
+ The distributions names are:
+ ethlab, eenlab, mthlab, menlab, t24, t25, t13, aco, t26, ethcm, eencm, mthcm, mencm, m34, gthlab, genlab, gthcm, gencm, gecthcm, m45, acollcm, m456, eenlab, ethlab, t2in, g2thcm, g2encm, th5lab, th6lab, en5lab, en6lab, m56, mubeam, mubeam.
+ ******************************
+ Generation finished

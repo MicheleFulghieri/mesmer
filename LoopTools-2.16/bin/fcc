@@ -1,0 +1,81 @@
+#! /bin/bash
+# script to compile C programs that are linked 
+# against Fortran libraries
+# last modified 12 Oct 21 th
+
+exec 3>&2
+exec 2> /tmp/fcc.log.$$
+set -x
+
+args=
+compileonly=
+objs=
+ldflags=
+fldflags="-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/data/mfulghieri/anaconda3/envs/mesmer/lib -Wl,-rpath-link,/data/mfulghieri/anaconda3/envs/mesmer/lib -L/data/mfulghieri/anaconda3/envs/mesmer/lib -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../libexec/gcc/x86_64-conda-linux-gnu/14.3.0/liblto_plugin.so -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../lib/gcc/x86_64-conda-linux-gnu/14.3.0 -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../lib/gcc -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../lib/gcc/x86_64-conda-linux-gnu/14.3.0/../../../../x86_64-conda-linux-gnu/lib/../lib -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../lib/gcc/x86_64-conda-linux-gnu/14.3.0/../../../../lib -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../lib/gcc/x86_64-conda-linux-gnu/14.3.0/../../../../x86_64-conda-linux-gnu/lib -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../lib/gcc/x86_64-conda-linux-gnu/14.3.0/../../.. -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/data/mfulghieri/anaconda3/envs/mesmer/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -Wl,-rpath,/data/mfulghieri/anaconda3/envs/mesmer/lib -Wl,-rpath-link,/data/mfulghieri/anaconda3/envs/mesmer/lib -L -L/data/mfulghieri/anaconda3/envs/mesmer/lib/stubs -L -L/data/mfulghieri/anaconda3/envs/mesmer/lib -lpthread -lrt"
+cdefs="-DQUAD=0 -DQUADSIZE=16 -DNOUNDERSCORE=0 -DBIGENDIAN=0"
+
+cc="${REALCC:-gcc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /data/mfulghieri/anaconda3/envs/mesmer/include -m64}"
+cc+=" $cdefs"
+cxx="${REALCXX:-/data/mfulghieri/anaconda3/envs/mesmer/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /data/mfulghieri/anaconda3/envs/mesmer/include -m64 -stdlib=libstdc++}"
+cxx+=" $cdefs"
+[[ "${0%.in}" =~ f++$ ]] && cc="$cxx"
+
+while test $# -gt 0; do
+  printf -v arg "%q" "$1"
+  case "$1" in
+  -st | -b32 | -b64)
+	;; # ignore mcc-specific flags
+  -arch)
+	shift
+	;;
+  -lstdc++)
+	cc="$cxx"
+	;; # or else -static-libstdc++ has no effect
+  -Wno-long-double)
+	;; # mcc adds this on Macs & gcc 4 doesn't like it
+  -L*CompilerAdditions*)
+	ldflags+=" $arg"
+	mldir="${1#-L}"
+	mldir="${mldir%%CompilerAdditions*}"
+	mldir="${mldir/Links\/MathLink\/DeveloperKit/Libraries}"
+	[[ "$cc" == *-m32* ]] && mldir="${mldir//-x86-64}"
+	test -f "$mldir/libuuid.a" && ldflags+=" -L'$mldir'" fldflags+=" -luuid"
+	;;
+  -[Ll]* | -Wl*)
+	ldflags+=" $arg"
+	;;
+  *.tm.o)
+	objs="$arg $objs"
+	;;
+  *.a | *.o | *.so)
+	objs+=" $arg"
+	;;
+  *.cc)
+	args+=" $arg"
+	cc="$cxx"
+	;;
+  -c)
+	compileonly="-c"
+	;;
+  -o)
+	args+=" -o '$2'"
+	shift
+	;;
+  *.tm.c)
+	args+=" $arg"
+	tmc+=" $arg"
+	;;
+  *)
+	args+=" $arg"
+	tmargs+=" $arg"
+	;;
+  esac
+  shift
+done
+
+test -n "$DEBUG" && for tm in $tmc; do
+  eval "$cc $tmargs -E -P -o ${tm//.c}.i $tm 2>&3"
+done
+
+eval "set -x; exec $cc $args ${compileonly:-$objs $ldflags $fldflags} 2>&3"
+

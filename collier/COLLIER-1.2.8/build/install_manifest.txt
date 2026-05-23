@@ -1,0 +1,4 @@
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/lib/cmake/collierConfig.cmake
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/lib/cmake/collierConfigVersion.cmake
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/lib/libcollier.a
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/include/collier.mod

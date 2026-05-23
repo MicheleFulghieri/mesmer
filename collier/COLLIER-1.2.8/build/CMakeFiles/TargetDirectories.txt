@@ -1,0 +1,10 @@
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/build/CMakeFiles/collier.dir
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/build/CMakeFiles/uninstall.dir
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/build/CMakeFiles/demo.dir
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/build/CMakeFiles/democache.dir
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/build/CMakeFiles/edit_cache.dir
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/build/CMakeFiles/rebuild_cache.dir
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/build/CMakeFiles/list_install_components.dir
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/build/CMakeFiles/install.dir
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/build/CMakeFiles/install/local.dir
+/data/mfulghieri/mesmer/collier/COLLIER-1.2.8/build/CMakeFiles/install/strip.dir
