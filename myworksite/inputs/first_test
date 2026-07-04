@@ -1,0 +1,23 @@
+seed 42
+path outputs/first_test
+nev 100
+mode weighted
+arun on
+hadoff no
+wnorm 1337.22467386
+sdmax 13000.0
+ord alpha
+Ebeam 160.d0
+Qmu 1
+Eemin 1.d0
+bspr  0.d0
+extmubeam no
+radchs 1 1
+thmumin 0.
+thmumax 100.
+themax 100.
+store no yes
+storemode 0
+acoplcut no 5.
+elastcut no 0.2
+run
