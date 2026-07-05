@@ -35,3 +35,5 @@
 outputs/
 exe/
 jobs/
+.vscode/
+*vscode
