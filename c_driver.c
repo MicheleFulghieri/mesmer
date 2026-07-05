@@ -151,9 +151,9 @@ int main(int argc, char* argv[])
 
   extern void IncomingMuonMomentum_mesmer(double* pmu);
   
-  int errinit = init_mesmer(argv[1]);
+  int errinit = init_mesmer(argv[1]);  // pass the string with the data-card path to the init_mesmer function in userinterface.F
 
-  if (errinit == 1) {
+  if (errinit == 1) {  //init_mesmer function in userinterface.F returns 0 if all ok
     printf("Something wrong in initialization! Stopping!\n");
     return 1;
   };
@@ -174,6 +174,8 @@ int main(int argc, char* argv[])
   double avg,error;
   int nadd = 1;
 
+  int long n_photons = 0; // photon counter
+
   /* do loop over events */
   for (i=0; i<nev; i = i + nadd){
     nadd = 1;
@@ -181,19 +183,51 @@ int main(int argc, char* argv[])
     IncomingMuonMomentum_mesmer(pmu);
     generate_event_mesmer(pmu, &nfs, mcids, pmat, &weight, &itag, &ievtnr, &wnovp, &wnohad, &wLO, &wNLO, cwvp, &ierr);
     
-    if (ierr == 0) {
-      wsum  = wsum  + weight;
-      wsum2 = wsum2 + weight*weight;
-      avg   = wsum/(ievtnr);
+    if (ierr == 0) {  // accepted event
+      wsum  = wsum  + weight;        // cumulate the weights of the events satisfying the cuts
+      wsum2 = wsum2 + weight*weight; // squared weights (for the MC variance)
+      avg   = wsum/(ievtnr);         // partial mean of the weights (wsum / Ntrials)
+
+    // Dyagnostic of the first 5 accepted events
+    if (i < 5) {
+          printf("Event %d accepted. FS particles (nfs) = %d\n", i, nfs);
+          for (int j = 0; j < nfs; ++j) {
+              printf("  -> Particles index %d: code read by C = %d\n", j, mcids[j]);
+          }
+    }
+
+    if (nfs > 2) {   // at leat 3 particles (real photon emission)
+          double E  = pmat[2][0]; 
+          double px = pmat[2][1];
+          double py = pmat[2][2];
+          double pz = pmat[2][3];
+          
+          double m_squared = E*E - (px*px + py*py + pz*pz);
+          
+          printf("Real photon event nfs = %d\n", nfs);
+          printf("  -> Photon energy: %.4f GeV\n", E);
+          printf("  -> Computed invariant mass: %.6f GeV^2\n", m_squared);
+      }
+  
+
+      // Analyze the final state photon of the accepted event
+      for (int j = 0; j < nfs; ++j) {  // loop over all the fs particles
+        if (mcids[j] == 22) { // if photon
+          n_photons++;
+          printf("Final state photon detected with energy: %.4f GeV\n", pmat[j][0]);
+        } // end if photon
+      } // end for over the final state particles
+
     } else {
       nadd = 0;
     }
   }
   /* end do loop over events */
+  printf("Total number of real photons generated: %ld\n", n_photons);
 
   avg   = wsum/(ievtnr);
   error = fabs((wsum2/(ievtnr) - avg*avg))/(ievtnr);
-  error = sqrt(error);
+  error = sqrt(error);  // final error on the mean of the weights
   
   printf("%.16f %.16f\n",avg,error); 
 

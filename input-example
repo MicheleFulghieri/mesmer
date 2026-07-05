@@ -1,6 +1,6 @@
 seed 42
 path test-run
-nev 1000000
+nev 100000000
 mode weighted
 arun on
 hadoff no

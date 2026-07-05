@@ -1,6 +1,6 @@
 seed 42
 path outputs/first_test
-nev 100
+nev 100000
 mode weighted
 arun on
 hadoff no
