@@ -188,35 +188,25 @@ int main(int argc, char* argv[])
       wsum2 = wsum2 + weight*weight; // squared weights (for the MC variance)
       avg   = wsum/(ievtnr);         // partial mean of the weights (wsum / Ntrials)
 
-    // Dyagnostic of the first 5 accepted events
-    if (i < 5) {
-          printf("Event %d accepted. FS particles (nfs) = %d\n", i, nfs);
-          for (int j = 0; j < nfs; ++j) {
-              printf("  -> Particles index %d: code read by C = %d\n", j, mcids[j]);
-          }
-    }
+    if (nfs == 3) {  // 3 fsp -> photon
+      n_photons ++;  // update photon counter
 
-    if (nfs > 2) {   // at leat 3 particles (real photon emission)
-          double E  = pmat[2][0]; 
-          double px = pmat[2][1];
-          double py = pmat[2][2];
-          double pz = pmat[2][3];
-          
-          double m_squared = E*E - (px*px + py*py + pz*pz);
-          
-          printf("Real photon event nfs = %d\n", nfs);
-          printf("  -> Photon energy: %.4f GeV\n", E);
-          printf("  -> Computed invariant mass: %.6f GeV^2\n", m_squared);
+      // C row-major pmat extraction pmat[row][col] = pmat[part][4mom idx]
+      double E  = pmat[2][0];
+      double px = pmat[2][1];   
+      double py = pmat[2][2];   // third particle (photon), px
+      double pz = pmat[2][3];
+
+      double m_squared = E*E - (px*px + py*py + pz*pz);  // invariant mass
+
+      if (n_photons <= 5) {     // only first 5 events
+        printf("Real photon!\n");
+        printf("  -> Energy: %.4f GeV\n", E);
+        printf("  -> px: %.4f, py: %.4f, pz: %.4f\n", px, py, pz);
+        printf("  -> Invariant mass: %.6f GeV^2\n", m_squared);
       }
-  
-
-      // Analyze the final state photon of the accepted event
-      for (int j = 0; j < nfs; ++j) {  // loop over all the fs particles
-        if (mcids[j] == 22) { // if photon
-          n_photons++;
-          printf("Final state photon detected with energy: %.4f GeV\n", pmat[j][0]);
-        } // end if photon
-      } // end for over the final state particles
+    }
+      
 
     } else {
       nadd = 0;
