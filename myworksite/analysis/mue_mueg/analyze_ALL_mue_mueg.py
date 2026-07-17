@@ -62,7 +62,7 @@ for path in file_paths:
         plt.close()  # free the ra,
         
     except Exception as e:
-        print(f"[ERROR] Impossibile analyse {filename}: {e}")
+        print(f"[ERROR] Impossibile to analyse {filename}: {e}")
 
 print("\nAll done/'.")
 
